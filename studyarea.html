@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Area</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 15px 0;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #1597b8;
+        }
+        .category {
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        .category h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 2em;
+        }
+        .category-row {
+            display: flex;
+            justify-content: space-evenly; /* Ensure cards are spread evenly across the row */
+            gap: 20px;
+            flex-wrap: nowrap; /* Ensure no wrapping */
+            overflow-x: auto; /* Allow horizontal scrolling if necessary */
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Fixed card width */
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            flex-shrink: 0; /* Prevent cards from shrinking */
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.4em;
+            color: #333;
+        }
+        .card p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1597b8;
+            color: white;
+            border-radius: 50%;
+            padding: 20px;
+            cursor: pointer;
+        }
+        .chatbox {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+        .chatbox-header {
+            font-weight: bold;
+            text-align: center;
+        }
+        .chatbox-content {
+            max-height: 200px;
+            overflow-y: auto;
+            margin: 10px 0;
+            padding-right: 5px;
+        }
+        .chatbox-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                width: 250px; /* Slightly smaller cards for medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 200px; /* Even smaller cards for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Web Development Category -->
+    <div class="category">
+        <h2>Web Development</h2>
+        <div class="category-row">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 1: HTML Basics</h3>
+                    <p>Learn the structure of webpages using HTML.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 2: CSS Fundamentals</h3>
+                    <p>Understand how to style your webpage with CSS.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 3: JavaScript Basics</h3>
+                    <p>Get started with JavaScript to add interactivity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DSA Category -->
+    <div class="category">
+        <h2>Data Structures & Algorithms</h2>
+        <div class="category-row">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 1: Arrays</h3>
+                    <p>Learn about arrays and their operations.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 2: Linked Lists</h3>
+                    <p>Explore linked lists and their traversal methods.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 3: Sorting Algorithms</h3>
+                    <p>Master various sorting techniques like Bubble Sort, Merge Sort, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI & Machine Learning Category -->
+    <div class="category">
+        <h2>AI & Machine Learning</h2>
+        <div class="category-row">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 1: Introduction to AI</h3>
+                    <p>Get introduced to the basics of Artificial Intelligence.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 2: Machine Learning Basics</h3>
+                    <p>Learn about supervised and unsupervised learning models.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Lesson 3: Neural Networks</h3>
+                    <p>Explore the working of neural networks and deep learning.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot" onclick="toggleChatbox()">💬</div>
+
+    <div class="chatbox" id="chatbox">
+        <div class="chatbox-header">Chat with Bot</div>
+        <div class="chatbox-content" id="chatboxContent"></div>
+        <input type="text" id="chatInput" class="chatbox-input" placeholder="Ask a question..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+    </div>
+
+    <script>
+        function toggleChatbox() {
+            const chatbox = document.getElementById("chatbox");
+            chatbox.style.display = (chatbox.style.display === "none" || chatbox.style.display === "") ? "block" : "none";
+        }
+
+        function sendMessage() {
+            const chatInput = document.getElementById("chatInput");
+            const chatboxContent = document.getElementById("chatboxContent");
+
+            if (chatInput.value.trim() === "") return;
+
+            // Display the user message
+            const userMessage = document.createElement("div");
+            userMessage.textContent = `You: ${chatInput.value}`;
+            chatboxContent.appendChild(userMessage);
+
+            // Simulate bot response (basic example)
+            const botResponse = document.createElement("div");
+            botResponse.textContent = `Bot: I'm here to help! What would you like to know about?`;
+            chatboxContent.appendChild(botResponse);
+
+            chatInput.value = "";  // Clear the input field
+            chatboxContent.scrollTop = chatboxContent.scrollHeight;  // Scroll to bottom
+        }
+    </script>
+</body>
+</html>
